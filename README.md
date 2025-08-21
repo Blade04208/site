@@ -3,6 +3,6 @@
 what do you expect
 
 
-this has full fucking controller and keyboard support
+this has full controller and keyboard support
 
 kill me
