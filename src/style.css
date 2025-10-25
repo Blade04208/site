@@ -253,9 +253,9 @@ nav {
         box-sizing: border-box;
         /* align-items: center; */
         height: 60px;
-    flex-direction: row-reverse;
-    padding-right: 242px;
-    padding-left: 12px;
+        flex-direction: row-reverse;
+        padding-right: 242px;
+        padding-left: 12px;
     }
 
     .logo {
@@ -414,8 +414,8 @@ button {
     display: flex;
     flex-direction: column;
     gap: 16px;
-    justify-content: center!important;
-    align-items: center!important;
+    justify-content: center !important;
+    align-items: center !important;
     text-align: center;
     height: 100%;
     width: 100%;
@@ -434,4 +434,35 @@ button[onclick^="document.location='https://x.com/"] {
 button[onclick^="document.location='https://t.me/"] {
     background: #2eaae9;
     color: #FFF;
+}
+
+
+.tile {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 20px;
+    text-decoration: none;
+width: calc(45% - 4px);
+    h1 {
+        color: white;
+        font-size: 20px;
+    }
+
+    p {
+        margin: 0px;
+    }
+
+    img {
+        width: 100%;
+        aspect-ratio: 3/1;
+    }
+}
+
+proj-grid {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
 }
