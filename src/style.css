@@ -444,7 +444,8 @@ button[onclick^="document.location='https://t.me/"] {
     border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 20px;
     text-decoration: none;
-width: calc(45% - 4px);
+    width: calc(45% - 4px);
+
     h1 {
         color: white;
         font-size: 20px;
