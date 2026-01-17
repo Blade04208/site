@@ -21,13 +21,7 @@ html {
     width: 100vw;
     height: 100vh;
     background:
-        /* linear-gradient(0deg, color-mix(in srgb, var(--pagecol), transparent 50%) 0%, color-mix(in srgb, var(--pagecol), transparent 50%) 100%), */
-        linear-gradient(0deg, rgba(251, 74, 82, 1) 0%, rgba(251, 74, 82, 1) 100%),
-        linear-gradient(0deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0.20) 100%),
-        linear-gradient(0deg, rgba(25, 25, 25, 0.40) 0%, rgba(25, 25, 25, 0.40) 100%),
-        url(./jump.png),
-        radial-gradient(119.04% 90.75% at 93.18% 5.93%, #FFFFFF70 0%, #FFFFFF70 100%),
-        radial-gradient(235.62% 229.18% at -53.01% -72.73%, #4184D0 0%, #214167 100%);
+        url(./jump.png);
     /* you know this isnt ai generated because no ai would be insane enough to shove this many layers into a bg */
     background-blend-mode: hue, saturation, overlay, overlay, soft-light, overlay, normal;
     /* transition: background 0.4s ease, background-color 0.4s ease; */
@@ -44,9 +38,10 @@ html::after {
     inset: 0;
     background: var(--pagecol);
     mix-blend-mode: hue;
-    transition: background-color 1s;
+    transition: background 1s ease;
     z-index: 2;
     pointer-events: none;
+    opacity: 0.5;
 }
 
 
