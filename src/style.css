@@ -290,6 +290,13 @@ footer {
 }
 
 @media screen and (width < 985px) {
+
+    .logo::before {
+        content: "MOBILE BROKEN SWITCH TO DESKTOP";
+        font-size: 24px;
+        color: white;
+        background: red;
+    }
     nav {
         margin: 0px;
         padding-left: 0px;
