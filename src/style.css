@@ -339,11 +339,9 @@ footer {
         overflow-x: scroll;
         box-sizing: border-box;
         align-items: center;
+        justify-content: start;
+        padding: 50px 20px;
         flex-direction: row;
-        padding-left: 242px;
-        padding-right: 12px;
-        padding-bottom: 50px;
-        padding-top: 50px;
         margin-top: -50px;
     }
 
