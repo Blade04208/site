@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap");
 
 @font-face {
-    font-family: 'NerdFontsSymbols Nerd Font';
-    src: url("www.nerdfonts.com/assets/fonts/Symbols-2048-em Nerd Font Complete v233.woff2") format("woff2") !important;
+    font-family: "NerdFontsSymbols Nerd Font";
+    src: url("www.nerdfonts.com/assets/fonts/Symbols-2048-em Nerd Font Complete v233.woff2")
+        format("woff2") !important;
     font-weight: normal;
     font-style: normal;
 }
@@ -17,13 +18,12 @@ html {
     color: #fff;
     font-family: "Atkinson Hyperlegible";
     scroll-behavior: smooth;
-    background-color: #0086FF;
+    background-color: #0086ff;
     width: 100vw;
     height: 100vh;
-    background:
-        url(./jump.png);
-    /* you know this isnt ai generated because no ai would be insane enough to shove this many layers into a bg */
-    background-blend-mode: hue, saturation, overlay, overlay, soft-light, overlay, normal;
+    background: url(./jump.png);
+    background-blend-mode:
+        hue, saturation, overlay, overlay, soft-light, overlay, normal;
     /* transition: background 0.4s ease, background-color 0.4s ease; */
     transition: background-image 0.4s ease;
     background-repeat: no-repeat;
@@ -43,8 +43,6 @@ html::after {
     pointer-events: none;
     opacity: 0.5;
 }
-
-
 
 nf {
     font-family: "NerdFontsSymbols Nerd Font";
@@ -97,7 +95,6 @@ body {
     gap: 20px;
     width: 985px;
 
-
     /* Inside auto layout */
     flex: none;
     order: 1;
@@ -111,14 +108,19 @@ body {
     gap: 10px;
     background: rgba(0, 0, 0, 0.5);
     border: 1px solid #ffffff72;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.25), inset 0px 3px 10px -25px rgba(255, 255, 255, 0.15), inset 0px 2px 10px -100px rgba(255, 255, 255, 0.25);
-    box-shadow: 0px 4px 20px color(display-p3 0.000 0.000 0.000 / 0.25), inset 0px 3px 10px -25px color(display-p3 1.000 1.000 1.000 / 0.15), inset 0px 2px 10px -100px color(display-p3 1.000 1.000 1.000 / 0.25);
+    box-shadow:
+        0px 4px 20px rgba(0, 0, 0, 0.25),
+        inset 0px 3px 10px -25px rgba(255, 255, 255, 0.15),
+        inset 0px 2px 10px -100px rgba(255, 255, 255, 0.25);
+    box-shadow:
+        0px 4px 20px color(display-p3 0 0 0 / 0.25),
+        inset 0px 3px 10px -25px color(display-p3 1 1 1 / 0.15),
+        inset 0px 2px 10px -100px color(display-p3 1 1 1 / 0.25);
     backdrop-filter: blur(50px);
     border-radius: 20px;
     flex: none;
     order: 0;
     flex-grow: 0;
-
 }
 
 .logo {
@@ -130,9 +132,7 @@ body {
     transition: filter 3s;
 
     &:hover {
-
         filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-
     }
 }
 
@@ -174,15 +174,21 @@ nav {
     padding: 10px 20px;
     gap: 10px;
     height: 50px;
-    background: linear-gradient(to bottom, color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 5%), color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 2.5%));
-    box-shadow: inset 0px 0px 4px 20px color-mix(in oklab, rgba(255, 255, 255 0.75), var(--pagecol) 50%);
-    border: 1px solid color-mix(in oklab, rgba(255, 255, 255, 0.25), var(--pagecol) 10%);
+    background: linear-gradient(
+        to bottom,
+        color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 5%),
+        color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 2.5%)
+    );
+    box-shadow: inset 0px 0px 4px 20px
+        color-mix(in oklab, rgba(255, 255, 255 0.75), var(--pagecol) 50%);
+    border: 1px solid
+        color-mix(in oklab, rgba(255, 255, 255, 0.25), var(--pagecol) 10%);
     backdrop-filter: blur(25px);
     border-radius: 148px;
     flex: none;
     order: 4;
     flex-grow: 0;
-    font-family: 'Atkinson Hyperlegible';
+    font-family: "Atkinson Hyperlegible";
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
@@ -190,8 +196,43 @@ nav {
     text-decoration: none;
     color: rgba(255, 255, 255, 0.5);
     transition:
-        all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
-
+        all 0.4s
+            linear(
+                0,
+                0.49 7.4%,
+                0.864 15.3%,
+                1.005 19.4%,
+                1.12 23.7%,
+                1.206 28.1%,
+                1.267 32.8%,
+                1.296 36.4%,
+                1.311 40.2%,
+                1.313 44.2%,
+                1.301 48.6%,
+                1.252 56.9%,
+                1.105 74.4%,
+                1.048 82.5%,
+                1.011 91.1%,
+                1
+            ),
+        scale 0.3s
+            linear(
+                0,
+                0.012 0.9%,
+                0.05 2%,
+                0.411 9.2%,
+                0.517 11.8%,
+                0.611 14.6%,
+                0.694 17.7%,
+                0.765 21.1%,
+                0.824 24.8%,
+                0.872 28.9%,
+                0.91 33.4%,
+                0.939 38.4%,
+                0.977 50.9%,
+                0.994 68.4%,
+                1
+            );
 
     nf {
         display: none;
@@ -204,7 +245,6 @@ nav {
         display: block !important;
         font-size: 16px;
         margin-left: -8px;
-
     }
 
     &:hover {
@@ -251,8 +291,11 @@ nav {
     align-items: center;
     padding: 30px 30px !important;
     gap: 20px;
-    background: color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 5%), linear-gradient(to bottom, transparent, black);
-    box-shadow: 0px 0px 50px color-mix(in oklab, rgba(255, 255, 255, 0.25), var(--pagecol) 10%);
+    background:
+        color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 5%),
+        linear-gradient(to bottom, transparent, black);
+    box-shadow: 0px 0px 50px
+        color-mix(in oklab, rgba(255, 255, 255, 0.25), var(--pagecol) 10%);
     backdrop-filter: blur(25px);
     border-radius: 100px;
     flex: none;
@@ -260,7 +303,6 @@ nav {
     color: white;
     font-weight: bold;
     font-size: 36px;
-
 
     nf {
         display: block;
@@ -290,29 +332,23 @@ footer {
 }
 
 @media screen and (width < 985px) {
-
-    .logo::before {
-        content: "MOBILE BROKEN SWITCH TO DESKTOP";
-        font-size: 24px;
-        color: white;
-        background: red;
-    }
     nav {
         margin: 0px;
         padding-left: 0px;
         width: 100%;
         overflow-x: scroll;
         box-sizing: border-box;
-        /* align-items: center; */
-        height: 60px;
-        flex-direction: row-reverse;
-        padding-right: 242px;
-        padding-left: 12px;
+        align-items: center;
+        flex-direction: row;
+        padding-left: 242px;
+        padding-right: 12px;
+        padding-bottom: 50px;
+        padding-top: 50px;
+        margin-top: -50px;
     }
 
     .logo {
         padding: 0px 0px 20px 30px;
-
     }
 
     .title {
@@ -321,7 +357,7 @@ footer {
 
     .nav-item {
         font-size: 24px;
-        padding: 10px !important;
+        /*padding: 10px !important;*/
 
         nf {
             scale: 0.8;
@@ -345,10 +381,18 @@ footer {
         overflow-x: hidden;
         padding-right: 0px;
         padding-left: 0px;
+        padding-bottom: 0px;
+        align-items: start;
     }
 
     #content {
-        padding-top: 0px;
+        margin: 0px 5px 20px;
+        width: calc(100vw - 10px);
+        p {
+            margin: 0px;
+            padding: 0px;
+            max-width: 100%;
+        }
     }
 
     .scroll {
@@ -356,10 +400,13 @@ footer {
         padding: 20px;
         width: calc(100% + 110px);
     }
+    footer {
+        display: none;
+    }
 }
 
 p {
-    color: #FFF;
+    color: #fff;
     color: color(display-p3 1 1 1);
     font-family: "Atkinson Hyperlegible";
     font-size: 20px;
@@ -367,7 +414,6 @@ p {
     font-weight: 400;
     line-height: normal;
 }
-
 
 /* .gamepad-selected {
     padding: 10px 20px;
@@ -403,7 +449,7 @@ p {
         font-size: 24px;
     }
 
-    >div {
+    > div {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -419,10 +465,9 @@ p {
     display: flex !important;
 }
 
-
 button {
     border-radius: 100px;
-    background: #FFF;
+    background: #fff;
     background: color(display-p3 1 1 1);
     display: flex;
     padding: 10px 20px;
@@ -441,7 +486,6 @@ button {
         color: black;
         filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
         outline: 2px solid rgba(255, 255, 255, 0.5);
-
     }
 
     &:active {
@@ -461,20 +505,19 @@ button {
 }
 
 button[onclick^="document.location='https://discord.com/"] {
-    background: #5865F2;
-    color: #FFF;
+    background: #5865f2;
+    color: #fff;
 }
 
 button[onclick^="document.location='https://x.com/"] {
     background: #24a4f2;
-    color: #FFF;
+    color: #fff;
 }
 
 button[onclick^="document.location='https://t.me/"] {
     background: #2eaae9;
-    color: #FFF;
+    color: #fff;
 }
-
 
 .tile {
     background: rgba(0, 0, 0, 0.5);
@@ -483,7 +526,7 @@ button[onclick^="document.location='https://t.me/"] {
     border: 1px solid rgba(255, 255, 255, 0.25);
     padding: 20px;
     text-decoration: none;
-    width: calc(45% - 4px);
+    width: 100%;
 
     h1 {
         color: white;
