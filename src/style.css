@@ -1,13 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap");
-
-@font-face {
-    font-family: "NerdFontsSymbols Nerd Font";
-    src: url("www.nerdfonts.com/assets/fonts/Symbols-2048-em Nerd Font Complete v233.woff2")
-        format("woff2") !important;
-    font-weight: normal;
-    font-style: normal;
-}
 
 .nocss {
     display: none;
@@ -21,7 +12,7 @@ html {
     background-color: #0086ff;
     width: 100vw;
     height: 100vh;
-    background: url(./jump.png);
+    background: url(./jump.webp);
     background-blend-mode:
         hue, saturation, overlay, overlay, soft-light, overlay, normal;
     /* transition: background 0.4s ease, background-color 0.4s ease; */
