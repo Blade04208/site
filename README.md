@@ -1,8 +1,5 @@
-# me site
+# [blade0.net](https://blade0.net)
 
-what do you expect
+my website. it exists, and is small™
 
-
-this has full controller and keyboard support
-
-kill me
+fun fact: the licence for this repo is roughly 20x bigger than index.html

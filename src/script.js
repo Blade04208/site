@@ -1,2 +1,65 @@
-document.addEventListener("DOMContentLoaded",()=>{const content=document.getElementById("content");const htmlEl=document.documentElement;document.body.addEventListener("click",async(e)=>{const link=e.target.closest("a");if(!link||link.target==="_blank"||link.hasAttribute("download")||link.href.startsWith("mailto:"))return;const isSameOrigin=new URL(link.href).origin===window.location.origin;if(!isSameOrigin)return;const currentPath=window.location.pathname.replace(/\/+$/,"");const targetPath=new URL(link.href).pathname.replace(/\/+$/,"");if(currentPath===targetPath)return;e.preventDefault();if(link.classList.contains("nav-item")){document.querySelectorAll(".nav-item.selected").forEach(el=>el.classList.remove("selected"));link.classList.add("selected");}
-content.style.transition="opacity 0.2s ease";content.style.opacity=0;try{const res=await fetch(link.href);const html=await res.text();const parser=new DOMParser();const doc=parser.parseFromString(html,"text/html");const newPagecol=doc.documentElement.style.getPropertyValue("--pagecol").trim();if(newPagecol)htmlEl.style.setProperty("--pagecol",newPagecol);const newContent=doc.querySelector("#content");if(!newContent)throw new Error("No #content found in fetched page.");setTimeout(()=>{content.innerHTML=newContent.innerHTML;content.style.opacity=1;window.history.pushState({},"",link.href);},400);}catch(err){console.error("Navigation failed:",err);window.location.href=link.href;}});window.addEventListener("popstate",async()=>{try{const res=await fetch(location.href);const html=await res.text();const doc=new DOMParser().parseFromString(html,"text/html");const newPagecol=doc.documentElement.style.getPropertyValue("--pagecol").trim();if(newPagecol)htmlEl.style.setProperty("--pagecol",newPagecol);const newContent=doc.querySelector("#content");if(newContent)content.innerHTML=newContent.innerHTML;}catch(err){console.error("Popstate load failed:",err);}});});
+document.addEventListener("DOMContentLoaded", () => {
+    const content = document.getElementById("content");
+    const htmlEl = document.documentElement;
+    document.body.addEventListener("click", async (e) => {
+        const link = e.target.closest("a");
+        if (
+            !link ||
+            link.target === "_blank" ||
+            link.hasAttribute("download") ||
+            link.href.startsWith("mailto:")
+        )
+            return;
+        const isSameOrigin =
+            new URL(link.href).origin === window.location.origin;
+        if (!isSameOrigin) return;
+        const currentPath = window.location.pathname.replace(/\/+$/, "");
+        const targetPath = new URL(link.href).pathname.replace(/\/+$/, "");
+        if (currentPath === targetPath) return;
+        e.preventDefault();
+        if (link.classList.contains("nv-i")) {
+            document
+                .querySelectorAll(".nv-i.sel")
+                .forEach((el) => el.classList.remove("sel"));
+            link.classList.add("sel");
+        }
+        content.style.transition = "opacity 0.2s ease";
+        content.style.opacity = 0;
+        try {
+            const res = await fetch(link.href);
+            const html = await res.text();
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, "text/html");
+            const newPagecol = doc.documentElement.style
+                .getPropertyValue("--c")
+                .trim();
+            if (newPagecol) htmlEl.style.setProperty("--c", newPagecol);
+            const newContent = doc.querySelector("#content");
+            if (!newContent)
+                throw new Error("No #content found in fetched page.");
+            setTimeout(() => {
+                content.innerHTML = newContent.innerHTML;
+                content.style.opacity = 1;
+                window.history.pushState({}, "", link.href);
+            }, 200);
+        } catch (err) {
+            console.error("Navigation failed:", err);
+            window.location.href = link.href;
+        }
+    });
+    window.addEventListener("popstate", async () => {
+        try {
+            const res = await fetch(location.href);
+            const html = await res.text();
+            const doc = new DOMParser().parseFromString(html, "text/html");
+            const newPagecol = doc.documentElement.style
+                .getPropertyValue("--c")
+                .trim();
+            if (newPagecol) htmlEl.style.setProperty("--c", newPagecol);
+            const newContent = doc.querySelector("#content");
+            if (newContent) content.innerHTML = newContent.innerHTML;
+        } catch (err) {
+            console.error("Popstate load failed:", err);
+        }
+    });
+});
