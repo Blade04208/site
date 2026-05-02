@@ -1,71 +1,75 @@
-@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Finlandica:ital,wght@0,400..700;1,400..700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Mono:ital,wght@0,200..800;1,200..800&family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap");
 
-@font-face {
-    font-family: "NerdFontsSymbols Nerd Font";
-    src: url("www.nerdfonts.com/assets/fonts/Symbols-2048-em Nerd Font Complete v233.woff2")
-        format("woff2") !important;
-    font-weight: normal;
-    font-style: normal;
-}
-
 .nocss {
-    display: none;
+    display: none
 }
 
 html {
-    /* --pagecol: rgba(0, 136, 255, 1); */
     color: #fff;
     font-family: "Atkinson Hyperlegible";
     scroll-behavior: smooth;
     background-color: #0086ff;
     width: 100vw;
     height: 100vh;
-    background: url(./jump.png);
-    background-blend-mode:
-        hue, saturation, overlay, overlay, soft-light, overlay, normal;
-    /* transition: background 0.4s ease, background-color 0.4s ease; */
-    transition: background-image 0.4s ease;
+    background: url(./jump.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
+
+    @supports (mix-blend-mode: hue) {
+        &::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: var(--c);
+            mix-blend-mode: hue;
+            transition: background 2s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+    }
 }
 
-html::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: var(--pagecol);
-    mix-blend-mode: hue;
-    transition: background 1s ease;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0.5;
+nav i {
+    background: white;
+    mask-image: url(./icons.svg);
+    mask-size: 370%;
+    width: 28px;
+    height: 27px;
+    aspect-ratio: 1/1;
+
+    &[a] {
+        mask-position: 1px -27px;
+    }
+
+    &[j] {
+        mask-position: 1px calc(0px - 27px * 2);
+    }
+
+    &[p] {
+        mask-position: 1px calc(27px * 3);
+    }
+
+    &[d] {
+        mask-position: 1px calc(27px * 2);
+    }
+
+    &[c] {
+        mask-position: 1px 27px;
+    }
 }
 
-nf {
-    font-family: "NerdFontsSymbols Nerd Font";
-    font-size: inherit;
-}
-
-.logo svg path {
-    fill: white !important;
-}
 
 body {
-    /* height: calc(100% - 8px); */
     z-index: 3;
-    /* Slide 16:9 - 8 */
-
-    /* Auto layout */
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     padding: 0px;
     position: relative;
-    overflow: scroll;
+    overflow: scroll
 }
 
 .sidebar {
@@ -74,53 +78,44 @@ body {
     align-items: flex-end;
     padding: 55px 30px;
     gap: 20px;
-    width: 255px;
+    width: 250px;
     flex: none;
     order: 0;
     align-self: stretch;
     flex-grow: 0;
-
     z-index: 3;
     overflow-y: scroll;
     position: sticky;
-    overflow: visible;
+    overflow: visible
 }
 
 #content {
-    /* Auto layout */
     display: flex;
     flex-direction: column;
     align-items: start;
     margin: 40px 0px;
     gap: 20px;
     width: 985px;
-
-    /* Inside auto layout */
     flex: none;
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-    margin-right: 255px;
-
-    /* Frame 34587976 */
+    margin-right: 250px;
     box-sizing: border-box;
     padding: 20px;
     gap: 10px;
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid #ffffff72;
-    box-shadow:
-        0px 4px 20px rgba(0, 0, 0, 0.25),
-        inset 0px 3px 10px -25px rgba(255, 255, 255, 0.15),
-        inset 0px 2px 10px -100px rgba(255, 255, 255, 0.25);
-    box-shadow:
-        0px 4px 20px color(display-p3 0 0 0 / 0.25),
-        inset 0px 3px 10px -25px color(display-p3 1 1 1 / 0.15),
-        inset 0px 2px 10px -100px color(display-p3 1 1 1 / 0.25);
+    border: 1px solid color-mix(in oklab, rgba(255, 255, 255, 0.25), var(--c) 25%);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%), inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
     backdrop-filter: blur(50px);
     border-radius: 20px;
     flex: none;
     order: 0;
     flex-grow: 0;
+
+    :first-child {
+        margin-top: 0px;
+    }
 }
 
 .logo {
@@ -131,8 +126,19 @@ body {
     gap: 20px;
     transition: filter 3s;
 
+    i[r] {
+        background: white;
+        mask-image: url(./icons.svg);
+        width: 60px;
+        height: 60px;
+        mask-size: 82px;
+        mask-position: -22px 0%;
+        scale: 0.8;
+        margin-right: calc(0px - 60px * 0.2);
+    }
+
     &:hover {
-        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5))
     }
 }
 
@@ -148,7 +154,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin: 0px;
+    margin: 0px
 }
 
 nav {
@@ -165,7 +171,7 @@ nav {
     overflow: visible;
 }
 
-.nav-item {
+.nv-i {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -174,15 +180,8 @@ nav {
     padding: 10px 20px;
     gap: 10px;
     height: 50px;
-    background: linear-gradient(
-        to bottom,
-        color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 5%),
-        color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 2.5%)
-    );
-    box-shadow: inset 0px 0px 4px 20px
-        color-mix(in oklab, rgba(255, 255, 255 0.75), var(--pagecol) 50%);
-    border: 1px solid
-        color-mix(in oklab, rgba(255, 255, 255, 0.25), var(--pagecol) 10%);
+    background: linear-gradient(to bottom, color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 5%), color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 2.5%));
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%), inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
     backdrop-filter: blur(25px);
     border-radius: 148px;
     flex: none;
@@ -195,74 +194,36 @@ nav {
     line-height: 30px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.5);
-    transition:
-        all 0.4s
-            linear(
-                0,
-                0.49 7.4%,
-                0.864 15.3%,
-                1.005 19.4%,
-                1.12 23.7%,
-                1.206 28.1%,
-                1.267 32.8%,
-                1.296 36.4%,
-                1.311 40.2%,
-                1.313 44.2%,
-                1.301 48.6%,
-                1.252 56.9%,
-                1.105 74.4%,
-                1.048 82.5%,
-                1.011 91.1%,
-                1
-            ),
-        scale 0.3s
-            linear(
-                0,
-                0.012 0.9%,
-                0.05 2%,
-                0.411 9.2%,
-                0.517 11.8%,
-                0.611 14.6%,
-                0.694 17.7%,
-                0.765 21.1%,
-                0.824 24.8%,
-                0.872 28.9%,
-                0.91 33.4%,
-                0.939 38.4%,
-                0.977 50.9%,
-                0.994 68.4%,
-                1
-            );
+    transition: all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
 
-    nf {
+    i {
         display: none;
         opacity: 0;
-        width: 0px;
         transition: all 0.3s;
-    }
 
-    nf.subtle {
-        display: block !important;
-        font-size: 16px;
-        margin-left: -8px;
+        &.sb {
+            display: block !important;
+            font-size: 16px;
+            margin-left: -8px
+        }
     }
 
     &:hover {
         padding: 10px 30px;
         color: #fff;
 
-        nf.subtle {
+        i.sb {
             display: block !important;
             font-size: 20px;
             color: rgba(255, 255, 255, 0.25);
             opacity: 1;
             width: auto;
-            margin-left: 4px;
+            margin-left: 4px
         }
     }
 
     &:active {
-        scale: 0.9;
+        scale: 0.9
     }
 
     &:focus-visible {
@@ -272,42 +233,38 @@ nav {
         filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
         outline: 2px solid rgba(255, 255, 255, 0.5);
 
-        nf.subtle {
+        i.sb {
             display: block !important;
             font-size: 20px;
             color: rgba(255, 255, 255, 0.25);
             opacity: 1;
             width: auto;
-            margin-left: 4px;
+            margin-left: 4px
         }
     }
-}
 
-.nav-item.selected {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 30px !important;
-    gap: 20px;
-    background:
-        color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--pagecol) 5%),
-        linear-gradient(to bottom, transparent, black);
-    box-shadow: 0px 0px 50px
-        color-mix(in oklab, rgba(255, 255, 255, 0.25), var(--pagecol) 10%);
-    backdrop-filter: blur(25px);
-    border-radius: 100px;
-    flex: none;
-    flex-grow: 0;
-    color: white;
-    font-weight: bold;
-    font-size: 36px;
+    &.sel {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 30px 30px !important;
+        gap: 20px;
+        background: color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 5%), linear-gradient(to bottom, transparent, black);
+        box-shadow: 0px 0px 80px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 10%), 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%), inset 0px 5px 10px 0px color-mix(in oklab, rgba(255, 255, 255, 0.075), var(--c) 30%);
+        backdrop-filter: blur(25px);
+        border-radius: 100px;
+        flex: none;
+        flex-grow: 0;
+        color: white;
+        font-weight: bold;
+        font-size: 36px;
 
-    nf {
-        display: block;
-        opacity: 1;
-        width: auto;
+        i {
+            display: block;
+            opacity: 1;
+        }
     }
 }
 
@@ -315,7 +272,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: end;
-    width: 255px;
+    width: 250px;
     order: 200;
     gap: 5px;
     padding: 0px 5px;
@@ -325,13 +282,76 @@ footer {
         text-decoration: none;
 
         &:hover {
-            text-decoration: var(--pagecol) dotted underline;
-            text-underline-offset: 4px;
+            text-decoration: var(--c) dotted underline;
+            text-underline-offset: 4px
         }
     }
 }
 
+.nv-b {
+    padding: 8px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    aspect-ratio: 1/1;
+    align-content: center;
+    text-align: center;
+    transition: all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+        color: #fff;
+        scale: 1.1;
+    }
+
+    &:active {
+        scale: 0.9
+    }
+
+    &:focus-visible {
+        padding: 10px 20px;
+        color: #fff;
+        color: color(display-p3 1 1 1 / 1);
+        filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
+        outline: 2px solid rgba(255, 255, 255, 0.5);
+
+        i.sb {
+            display: block !important;
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.25);
+            opacity: 1;
+            width: auto;
+            margin-left: 4px
+        }
+    }
+}
+
+@media screen and (width < 1510px) {
+
+    /* decenter */
+    body {
+        align-items: center;
+        justify-content: start;
+    }
+
+    .sidebar {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (width < 1290px) {
+
+    /* shrink content */
+    #content {
+        width: max-content;
+        flex: 1;
+        margin-right: 0px;
+    }
+}
+
 @media screen and (width < 985px) {
+
+    /* assume mobile */
     nav {
         margin: 0px;
         padding-left: 0px;
@@ -342,64 +362,81 @@ footer {
         justify-content: start;
         padding: 50px 20px;
         flex-direction: row;
-        margin-top: -50px;
+        margin-top: -50px
     }
 
     .logo {
-        padding: 0px 0px 20px 30px;
+        padding: 0px 0px 20px 30px
     }
 
     .title {
-        font-size: 32px;
+        font-size: 32px
     }
 
-    .nav-item {
+    .nv-i {
         font-size: 24px;
-        /*padding: 10px !important;*/
 
-        nf {
-            scale: 0.8;
+        i {
+            scale: 0.8
         }
-    }
 
-    .nav-item.selected {
-        font-size: 32px;
+        &.sel {
+            font-size: 32px
+        }
+
+        &:hover {
+            padding: 10px 20px;
+        }
     }
 
     body {
         flex-direction: column;
         padding: 0px;
         margin: 0px;
-        max-width: 100vw;
+        max-width: 100vw
     }
 
     .sidebar {
         gap: 0px;
         width: 100%;
-        overflow-x: hidden;
         padding-right: 0px;
         padding-left: 0px;
         padding-bottom: 0px;
         align-items: start;
+        position: fixed;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 150%;
+            inset: 0px;
+            position: absolute;
+            mask-image: linear-gradient(to bottom, black 30%, transparent);
+            backdrop-filter: blur(20px);
+            z-index: -1;
+            background: linear-gradient(to bottom, color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 10%) transparent);
+        }
     }
 
     #content {
-        margin: 0px 5px 20px;
+        margin: 255px 5px 20px;
         width: calc(100vw - 10px);
+
         p {
             margin: 0px;
             padding: 0px;
-            max-width: 100%;
+            max-width: 100%
         }
     }
 
     .scroll {
         margin: -80px;
         padding: 20px;
-        width: calc(100% + 110px);
+        width: calc(100% + 110px)
     }
+
     footer {
-        display: none;
+        display: none
     }
 }
 
@@ -410,57 +447,7 @@ p {
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;
-}
-
-/* .gamepad-selected {
-    padding: 10px 20px;
-    color: color(display-p3 1 1 1 / 1);
-    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-    outline: 2px solid rgba(255, 255, 255, 0.5);
-
-    nf.subtle {
-        display: block !important;
-        font-size: 20px;
-        color: rgba(255, 255, 255, 0.25);
-        opacity: 1;
-    }
-} */
-
-.gamepad-overlay {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    padding: 50px 75px;
-    align-content: baseline;
-    justify-content: end;
-    align-items: end;
-    box-sizing: border-box;
-    gap: 4px;
-    pointer-events: none;
-    z-index: 1000;
-
-    p {
-        height: 32px;
-        margin: 8px;
-        font-weight: 700;
-        font-size: 24px;
-    }
-
-    > div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 4px;
-        border-radius: 12px;
-        backdrop-filter: blur(16px);
-    }
-}
-
-.gamepad .gamepad-overlay {
-    display: flex !important;
+    line-height: normal
 }
 
 button {
@@ -483,11 +470,26 @@ button {
         padding: 10px 20px;
         color: black;
         filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
-        outline: 2px solid rgba(255, 255, 255, 0.5);
+        outline: 2px solid rgba(255, 255, 255, 0.5)
     }
 
     &:active {
-        scale: 0.9;
+        scale: 0.9
+    }
+
+    &[onclick^="document.location='https://discord.com/"] {
+        background: #5865f2;
+        color: #fff
+    }
+
+    &[onclick^="document.location='https://x.com/"] {
+        background: #24a4f2;
+        color: #fff
+    }
+
+    &[onclick^="document.location='https://t.me/"] {
+        background: #2eaae9;
+        color: #fff
     }
 }
 
@@ -499,26 +501,14 @@ button {
     align-items: center !important;
     text-align: center;
     height: 100%;
-    width: 100%;
+    width: 100%
 }
 
-button[onclick^="document.location='https://discord.com/"] {
-    background: #5865f2;
-    color: #fff;
-}
 
-button[onclick^="document.location='https://x.com/"] {
-    background: #24a4f2;
-    color: #fff;
-}
-
-button[onclick^="document.location='https://t.me/"] {
-    background: #2eaae9;
-    color: #fff;
-}
 
 .tile {
-    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom, color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 5%), color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 2.5%));
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%), inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -528,18 +518,36 @@ button[onclick^="document.location='https://t.me/"] {
 
     h1 {
         color: white;
-        font-size: 20px;
+        font-size: 20px
     }
 
     p {
-        margin: 0px;
+        margin: 0px
     }
 
     img {
         width: 100%;
         aspect-ratio: 3/1;
+        transition: all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        backdrop-filter: blur(20px);
+    }
+
+    &:hover {
+        scale: 1.025;
+        transition: all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
+
+        img {
+            scale: 1.05;
+        }
+    }
+
+    &:active {
+        scale: 0.9;
     }
 }
+
 
 proj-grid {
     width: 100%;
