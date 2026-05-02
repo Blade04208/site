@@ -15,56 +15,50 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    background-position: center
+    background-position: center;
+
+    @supports (mix-blend-mode: hue) {
+        &::after {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: var(--c);
+            mix-blend-mode: hue;
+            transition: background 2s ease;
+            z-index: 2;
+            pointer-events: none;
+        }
+    }
 }
 
-html::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: var(--c);
-    mix-blend-mode: hue;
-    transition: background 1s ease;
-    z-index: 2;
-    pointer-events: none;
-    opacity: 0.5
-}
-
-i {
+nav i {
     background: white;
     mask-image: url(./icons.svg);
     mask-size: 370%;
     width: 28px;
     height: 27px;
-aspect-ratio: 1/1;
-&[n="a"] {
-    mask-position: 1px -27px;
-}
-&[n="j"] {
-    mask-position: 1px  calc(0px - 27px * 2);
-}
-&[n="p"] {
-    mask-position: 1px calc(27px * 3);
-}
-&[n="d"] {
-    mask-position: 1px calc(27px * 2);
-}
-&[n="c"] {
-    mask-position: 1px 27px;
-}
-}
+    aspect-ratio: 1/1;
 
-.logo i[n="r"] {
-        background: white;
-    mask-image: url(./icons.svg);
-    width: 60px;
-    height: 60px;
-        mask-size: 82px;
-    mask-position: -22px 0%;
-    scale: 0.8;
-    margin-right: calc(0px - 60px * 0.2);
-}
+    &[a] {
+        mask-position: 1px -27px;
+    }
 
+    &[j] {
+        mask-position: 1px calc(0px - 27px * 2);
+    }
+
+    &[p] {
+        mask-position: 1px calc(27px * 3);
+    }
+
+    &[d] {
+        mask-position: 1px calc(27px * 2);
+    }
+
+    &[c] {
+        mask-position: 1px 27px;
+    }
+}
 
 
 body {
@@ -84,7 +78,7 @@ body {
     align-items: flex-end;
     padding: 55px 30px;
     gap: 20px;
-    width: 255px;
+    width: 250px;
     flex: none;
     order: 0;
     align-self: stretch;
@@ -106,18 +100,22 @@ body {
     order: 1;
     align-self: stretch;
     flex-grow: 0;
-    margin-right: 255px;
+    margin-right: 250px;
     box-sizing: border-box;
     padding: 20px;
     gap: 10px;
     background: rgba(0, 0, 0, 0.5);
-    border: 1px solid color-mix(in oklab, rgba(255,255,255,0.25), var(--c) 25%);
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%),  inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
+    border: 1px solid color-mix(in oklab, rgba(255, 255, 255, 0.25), var(--c) 25%);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%), inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
     backdrop-filter: blur(50px);
     border-radius: 20px;
     flex: none;
     order: 0;
-    flex-grow: 0
+    flex-grow: 0;
+
+    :first-child {
+        margin-top: 0px;
+    }
 }
 
 .logo {
@@ -127,6 +125,17 @@ body {
     align-items: center;
     gap: 20px;
     transition: filter 3s;
+
+    i[r] {
+        background: white;
+        mask-image: url(./icons.svg);
+        width: 60px;
+        height: 60px;
+        mask-size: 82px;
+        mask-position: -22px 0%;
+        scale: 0.8;
+        margin-right: calc(0px - 60px * 0.2);
+    }
 
     &:hover {
         filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5))
@@ -172,7 +181,7 @@ nav {
     gap: 10px;
     height: 50px;
     background: linear-gradient(to bottom, color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 5%), color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 2.5%));
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%),  inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%), inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
     backdrop-filter: blur(25px);
     border-radius: 148px;
     flex: none;
@@ -192,7 +201,7 @@ nav {
         opacity: 0;
         transition: all 0.3s;
 
-        &.subtle {
+        &.sb {
             display: block !important;
             font-size: 16px;
             margin-left: -8px
@@ -203,7 +212,7 @@ nav {
         padding: 10px 30px;
         color: #fff;
 
-        i.subtle {
+        i.sb {
             display: block !important;
             font-size: 20px;
             color: rgba(255, 255, 255, 0.25);
@@ -224,7 +233,7 @@ nav {
         filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
         outline: 2px solid rgba(255, 255, 255, 0.5);
 
-        i.subtle {
+        i.sb {
             display: block !important;
             font-size: 20px;
             color: rgba(255, 255, 255, 0.25);
@@ -243,7 +252,7 @@ nav {
         padding: 30px 30px !important;
         gap: 20px;
         background: color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 5%), linear-gradient(to bottom, transparent, black);
-        box-shadow: 0px 0px 80px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 10%), 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%),  inset 0px 5px 10px 0px color-mix(in oklab, rgba(255, 255, 255, 0.075), var(--c) 30%);
+        box-shadow: 0px 0px 80px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 10%), 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%), inset 0px 5px 10px 0px color-mix(in oklab, rgba(255, 255, 255, 0.075), var(--c) 30%);
         backdrop-filter: blur(25px);
         border-radius: 100px;
         flex: none;
@@ -253,8 +262,8 @@ nav {
         font-size: 36px;
 
         i {
-                    display: block;
-        opacity: 1;
+            display: block;
+            opacity: 1;
         }
     }
 }
@@ -263,7 +272,7 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: end;
-    width: 255px;
+    width: 250px;
     order: 200;
     gap: 5px;
     padding: 0px 5px;
@@ -287,9 +296,10 @@ footer {
     align-content: center;
     text-align: center;
     transition: all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
-color: white;
-text-decoration: none;
-        &:hover {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
         color: #fff;
         scale: 1.1;
     }
@@ -305,7 +315,7 @@ text-decoration: none;
         filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.5));
         outline: 2px solid rgba(255, 255, 255, 0.5);
 
-        i.subtle {
+        i.sb {
             display: block !important;
             font-size: 20px;
             color: rgba(255, 255, 255, 0.25);
@@ -316,7 +326,32 @@ text-decoration: none;
     }
 }
 
+@media screen and (width < 1510px) {
+
+    /* decenter */
+    body {
+        align-items: center;
+        justify-content: start;
+    }
+
+    .sidebar {
+        padding-left: 0px;
+    }
+}
+
+@media screen and (width < 1290px) {
+
+    /* shrink content */
+    #content {
+        width: max-content;
+        flex: 1;
+        margin-right: 0px;
+    }
+}
+
 @media screen and (width < 985px) {
+
+    /* assume mobile */
     nav {
         margin: 0px;
         padding-left: 0px;
@@ -348,6 +383,10 @@ text-decoration: none;
         &.sel {
             font-size: 32px
         }
+
+        &:hover {
+            padding: 10px 20px;
+        }
     }
 
     body {
@@ -360,15 +399,27 @@ text-decoration: none;
     .sidebar {
         gap: 0px;
         width: 100%;
-        overflow-x: hidden;
         padding-right: 0px;
         padding-left: 0px;
         padding-bottom: 0px;
-        align-items: start
+        align-items: start;
+        position: fixed;
+
+        &::before {
+            content: "";
+            width: 100%;
+            height: 150%;
+            inset: 0px;
+            position: absolute;
+            mask-image: linear-gradient(to bottom, black 30%, transparent);
+            backdrop-filter: blur(20px);
+            z-index: -1;
+            background: linear-gradient(to bottom, color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 10%) transparent);
+        }
     }
 
     #content {
-        margin: 0px 5px 20px;
+        margin: 255px 5px 20px;
         width: calc(100vw - 10px);
 
         p {
@@ -425,6 +476,21 @@ button {
     &:active {
         scale: 0.9
     }
+
+    &[onclick^="document.location='https://discord.com/"] {
+        background: #5865f2;
+        color: #fff
+    }
+
+    &[onclick^="document.location='https://x.com/"] {
+        background: #24a4f2;
+        color: #fff
+    }
+
+    &[onclick^="document.location='https://t.me/"] {
+        background: #2eaae9;
+        color: #fff
+    }
 }
 
 .center {
@@ -438,24 +504,11 @@ button {
     width: 100%
 }
 
-button[onclick^="document.location='https://discord.com/"] {
-    background: #5865f2;
-    color: #fff
-}
 
-button[onclick^="document.location='https://x.com/"] {
-    background: #24a4f2;
-    color: #fff
-}
-
-button[onclick^="document.location='https://t.me/"] {
-    background: #2eaae9;
-    color: #fff
-}
 
 .tile {
     background: linear-gradient(to bottom, color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 5%), color-mix(in oklab, rgba(0, 0, 0, 0.5), var(--c) 2.5%));
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%),  inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25), inset 0px -1px color-mix(in oklab, rgba(255, 255, 255, 0.3), var(--c) 30%), inset 0px 2.5px 5px 0px color-mix(in oklab, rgba(255, 255, 255, 0.1), var(--c) 15%);
     backdrop-filter: blur(10px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.25);
@@ -475,21 +528,24 @@ button[onclick^="document.location='https://t.me/"] {
     img {
         width: 100%;
         aspect-ratio: 3/1;
-                transition: all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
-background-color: rgba(255, 255, 255, 0.1);
-border-radius: 5px;
-    backdrop-filter: blur(20px);
+        transition: all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        backdrop-filter: blur(20px);
     }
+
     &:hover {
         scale: 1.025;
         transition: all 0.4s linear(0, 0.49 7.4%, 0.864 15.3%, 1.005 19.4%, 1.12 23.7%, 1.206 28.1%, 1.267 32.8%, 1.296 36.4%, 1.311 40.2%, 1.313 44.2%, 1.301 48.6%, 1.252 56.9%, 1.105 74.4%, 1.048 82.5%, 1.011 91.1%, 1), scale 0.3s linear(0, 0.012 0.9%, 0.05 2%, 0.411 9.2%, 0.517 11.8%, 0.611 14.6%, 0.694 17.7%, 0.765 21.1%, 0.824 24.8%, 0.872 28.9%, 0.91 33.4%, 0.939 38.4%, 0.977 50.9%, 0.994 68.4%, 1);
+
         img {
             scale: 1.05;
         }
     }
-            &:active {
-            scale: 0.9;
-        }
+
+    &:active {
+        scale: 0.9;
+    }
 }
 
 
