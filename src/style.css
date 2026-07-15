@@ -49,7 +49,8 @@ nav {
     color: white;
     font-weight: 500;
     width: fit-content;
-    position: absolute;
+    position: relative;
+    font-size: 16px;
 }
 
 h1 {
@@ -58,11 +59,29 @@ h1 {
     font-weight: 500;
     text-transform: uppercase;
     font-size: 36px;
-    text-shadow: -1px -1px var(--c), 1px 1px var(--c), 0px 1px var(--c), 1px 0px var(--c), -1px 0px var(--c), 0px -1px var(--c);
+
+    >span {
+        position: relative;
+        text-shadow: -1px -1px var(--c), 1px 1px var(--c), 0px 1px var(--c), 1px 0px var(--c), -1px 0px var(--c), 0px -1px var(--c);
+        z-index: 1;
+    }
 }
 
-#content:has(>.nv-b)>h1 {
-    margin: 0 0 0 50px;
+h1,
+p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+h1:has(>.nv-b) {
+    transform: translateX(-10px);
+    margin-bottom: -10px;
+
+    .nv-b {
+        top: -15px;
+        left: 10px;
+        z-index: 0;
+    }
 }
 
 div:has(>i[d]) {
@@ -180,11 +199,14 @@ i[c] {
     justify-content: center;
 }
 
+.scroll {
+    overflow: hidden scroll !important;
+}
+
 proj-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 5px;
-    overflow: hidden scroll;
 
     >a {
         display: flex;
@@ -201,6 +223,7 @@ proj-grid {
             height: calc(100% - 32px);
             object-fit: cover;
             flex: 1 1 auto;
+            filter: drop-shadow(0px 7.5px 15px rgba(0, 0, 0, 0.25));
         }
 
         >div {
@@ -271,4 +294,35 @@ proj-grid {
             margin-left: 4px;
         }
     }
+}
+
+
+body:has(#fullscreen:checked) {
+    width: 100%;
+    height: 100%;
+
+    >#content {
+        width: 100%;
+        height: calc(100% - 32px);
+
+        .scroll>* {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+    }
+}
+
+
+#content.small {
+    height: auto !important;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#content.small~.nv-i {
+    border-left: 1px solid white;
+}
+
+#content.small>p {
+    margin: 0;
 }
