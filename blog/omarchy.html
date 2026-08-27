@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html style="--c:#1a1b26; --t:#7aa2f7">
+
+<head>
+    <meta charset="UTF-8">
+    <title>blade0.net</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="og:title" content="We need to talk about Omarchy.">
+    <meta name="og:type" content="article">
+    <meta name="og:image" content="https://blade0.net/blog/assets/omarchy/desktop.png">
+    <meta name="og:url" content="https://blade0.net/blog/omarchy">
+    <meta name="article:author" content="Blade0">
+</head>
+<!-- No Rabbits Here. -->
+
+<body>
+    <nav> <a href="/index.html" class="nv-i">home</a>
+        <a href="/about.html" class="nv-i">about</a>
+        <a href="/projects.html" class="nv-i">projects</a>
+        <a href="/designs.html" class="nv-i">designs</a>
+        <a href="/contact.html" class="nv-i">contact</a>
+    </nav>
+    <div id="content">
+        <div class="scroll">
+            <h1> <a href="/designs.html" class="nv-b">Back</a><span>We need to talk about &ensp;<span
+                        style="color: #9ece6a;">Omarchy.</span></span></h1>
+            <p>So, Omarchy&#39;s flaring back up on Xitter with their fourth release,
+                &quot;Omarchy Quattro&quot;. Back when Omarchy was intially gaining traction and
+                haters, I thought about making a blog post like this to go through it
+                and actually see how &quot;bad&quot; it is. I never got around to it due to my
+                backup laptop&#39;s power circuit browning out and making the laptop
+                E-waste, so Nothing Ever Happened. But here we are, and Something has
+                Happened this time so I thought i&#39;d actually do it. Let&#39;s go through
+                Omarchy, its controversies, pros and cons and my thoughts on this.</p>
+            <p><strong>Please don&#39;t harass DHH, the Omarchy Project Management or
+                    Omacom,</strong> we&#39;ll go through exactly why you shouldn&#39;t later, as it
+                is important.</p>
+            <h1 id="1-from-a-birds-eye-view">1. From a birds-eye-view</h1>
+            <h2 id="11-dhhs-distro">1.1. DHH&#39;s &quot;Distro&quot;</h2>
+            <p>One topic brought up so often is whether Omarchy is even a &quot;distro&quot;
+                or not. I feel like we need to define what a &quot;Linux Distro&quot; is here, to
+                be fair.</p>
+            <p>A Distro, <a href="https://en.wiktionary.org/wiki/distro">according
+                    to Wiktionary</a> in terms of software, is</p>
+            <blockquote>
+                <p>A set of <a href="https://en.wiktionary.org/wiki/software#English" title="software">software</a> <a
+                        href="https://en.wiktionary.org/wiki/component#English" title="component">components</a>,
+                    often <a href="https://en.wiktionary.org/wiki/open_source#English" title="open source">open
+                        source</a>, that have been <a href="https://en.wiktionary.org/wiki/package#English"
+                        title="package">packaged</a> into a larger product or component for <a
+                        href="https://en.wiktionary.org/wiki/distribution#English" title="distribution">distribution</a>
+                    to end-users.</p>
+            </blockquote>
+            <p>We should also probably define <em>Software</em> too.</p>
+            <blockquote>
+                <p><a href="https://en.wiktionary.org/wiki/encode#English" title="encode">Encoded</a> <a
+                        href="https://en.wiktionary.org/wiki/computer#English" title="computer">computer</a> <a
+                        href="https://en.wiktionary.org/wiki/instructions#English"
+                        title="instructions">instructions</a>, usually modifiable (unless stored
+                    in some form of unalterable memory such as <a href="https://en.wiktionary.org/wiki/ROM#English"
+                        title="ROM">ROM</a>).
+                    <em>Some <strong>software</strong> will only run on a particular
+                        platform.</em>
+                </p>
+            </blockquote>
+            <p>Encoded is defined here as translated to code, defined as</p>
+            <blockquote>
+                <ol start="7" type="1">
+                    <li>(<a href="https://en.wiktionary.org/wiki/programming#Noun" title="programming">programming</a>,
+                        <a href="https://en.wiktionary.org/wiki/Appendix:Glossary#uncountable"
+                            title="Appendix:Glossary">uncountable</a>) Instructions for a <a
+                            href="https://en.wiktionary.org/wiki/computer#English" title="computer">computer</a>,
+                        written in a <a href="https://en.wiktionary.org/wiki/programming_language#English"
+                            title="programming language">programming language</a>; the <a
+                            href="https://en.wiktionary.org/wiki/input#English" title="input">input</a> of a <a
+                            href="https://en.wiktionary.org/wiki/translator#English" title="translator">translator</a>,
+                        an <a href="https://en.wiktionary.org/wiki/interpreter#English"
+                            title="interpreter">interpreter</a> or a <a
+                            href="https://en.wiktionary.org/wiki/browser#English" title="browser">browser</a>,
+                        namely: <a href="https://en.wiktionary.org/wiki/source_code#English" title="source code">source
+                            code</a>, <a href="https://en.wiktionary.org/wiki/machine_code#English"
+                            title="machine code">machine code</a>, <a
+                            href="https://en.wiktionary.org/wiki/bytecode#English" title="bytecode">bytecode</a>.
+                        <em>Object-oriented
+                            C++ <strong>code</strong> is easier to understand for a human than
+                            C <strong>code</strong>.</em> <em>I wrote some <strong>code</strong> to
+                            reformat text documents.</em> <em>This <a href="https://en.wiktionary.org/wiki/HTML#English"
+                                title="HTML">HTML</a> <strong>code</strong> may be placed on your <a
+                                href="https://en.wiktionary.org/wiki/web_page#English" title="web page">web
+                                page</a>.</em>
+                    </li>
+                </ol>
+            </blockquote>
+            <p>I think it&#39;s safe to say Omarchy&#39;s Bash scripts are software, but are
+                they packaged? Packaged is defined as</p>
+            <blockquote>
+                <ol start="3" type="1">
+                    <li>(<a href="https://en.wiktionary.org/wiki/software#English" title="software">software</a>) A
+                        piece of <a href="https://en.wiktionary.org/wiki/software#English" title="software">software</a>
+                        which has been prepared in such a way that
+                        it can be <a href="https://en.wiktionary.org/wiki/install#English" title="install">installed</a>
+                        with a <a href="https://en.wiktionary.org/wiki/package_manager#English"
+                            title="package manager">package manager</a>.</li>
+                </ol>
+            </blockquote>
+            <p>After some digging, omacom-io/omarchy-pkgs has pkgbuilds and is a
+                packaging server for omarchy, so if you were to put the omarchy package
+                server onto a vanila arch install, you <em>could</em> install omarchy
+                packages.</p>
+            <p>This obviously isn&#39;t conclusive, and will never be to some people,
+                and that&#39;s fine. It&#39;s just what you want to name a thing. This section
+                is completely frivolous compared to some of the other sections, to be
+                honest. If you want another (probably more reputable) person&#39;s opinions
+                on this, <a href="https://www.youtube.com/watch?v=yIA4idIdY_k">Brodie
+                    Robertson also made a video</a> about this topic while i was writing
+                this.</p>
+            <p>Actually, looking at these Omarchy scripts for a second... what the
+                hell are these?</p>
+            <h2 id="12-omarchys-software">1.2. Omarchy&#39;s software</h2>
+            <p><em>I&#39;m explicitly discussing Omarchy&#39;s own script files here, not
+                    software in their menu.</em></p>
+            <p>Omarchy&#39;s scripts are weird. Instead of DHH (or, well, more likely
+                his 5 AI agents - we&#39;ll get to that later,) using the practically global
+                standards for dotfiles, he&#39;s making the scripts and apps himself? Look
+                at <a
+                    href="https://github.com/basecamp/omarchy/blob/quattro/bin/omarchy-notification-send">omarchy-notification-send</a>.
+                This is a notification sender that does so through the notification
+                D-Bus socket, but this is really strange because this software already
+                exists, it&#39;s called <a href="https://archlinux.org/packages/extra/x86_64/libnotify/">notify-send,
+                    a part of libnotify</a>, the notification standard that a substantial
+                amount of Linux software uses, and literally comes with Omarchy by
+                default.</p>
+            <img src="/blog/assets/omarchy/notify-send.png">
+            <p>Why not use this?? Does he have beef against specifically
+                notify-send? As far as I can see, omarchy-notification-send adds no new
+                features that notify-send doesn&#39;t already have, why is this here?</p>
+            <p>You know, I was halfway through these scripts when I realized, its
+                not DHH being an idiot or having grudges against all software, it&#39;s
+                branding. <code>omarchy-pkg-install-aur</code> exists because when
+                someone on arch wants to install an AUR package someone from Omarchy
+                recommended to them, they&#39;ll go &quot;oh, its
+                <code>omarchy pkg install helium</code>&quot; which obviously the Arch user
+                won&#39;t have. When the Arch user says &quot;what&#39;s the actual command behind
+                that&quot; the Omarchy user won&#39;t know, because they&#39;re a beginner to Linux
+                who just installed someone&#39;s riced up arch setup because they were told
+                it&#39;s &quot;user-friendly&quot; and &quot;welcoming&quot; and &quot;apolitical unlike the REST of
+                these Linux goblin spaces&quot; (WE WILL GET TO THAT LATER.) but ultimately
+                Omarchy leaves them with skills they can&#39;t take back out of Omarchy, so
+                they stay. This is really bad for growth, community and interoperability
+                between Linux users. Obviously this is a bit over-exaggerated, the Arch
+                user would likely know to just <code>yay -S</code> it, but DHH wants
+                Omarchy to become the face of the Linux Desktop, so stuff like this is
+                gonna happen to newcomers.
+            </p>
+            <p>One last thing about these scripts. This could have been just one
+                binary man. <code>omarchy</code> already maps to every other bash script
+                in bin/, so just compiling this into one binary in your language of
+                choice would save having to go down the ladder of scripts, and would
+                make it easier for other distros to package omarchy, which could allow
+                you to &quot;omarchify&quot; any distro, which might be quite cool as a
+                concept!</p>
+            <h2 id="13-a-lack-of-security">1.3. (A lack of) Security</h2>
+            <p>So it turns out when you package and manage your entire system
+                through bash scripts and AI agents, a few small cracks appear.</p>
+            <p>Remember that notification bash script? <a href="https://mehmetince.net/omarchy/">Someone figured out how
+                    to
+                    exploit that to run arbitrary code</a>. Some{one|bot} forgot to cleanse
+                their strings! This isn&#39;t the only security vuln disclosed over Twitter,
+                there&#39;s also the fact that Omarchy <a
+                    href="https://github.com/0xdeadbeefnetwork/OmarchyLinuxLPE">gives you
+                    the root docker socket on install</a>, and with an RCE like above you
+                can do some really dangerous stuff. Now, Omarchy does have a team
+                dedicated to security, and a deliberate contact page for security vulns,
+                <a href="https://omarchy.org/security/">https://omarchy.org/security/</a>,
+                and a responsible-disclosure policy, but that page was only made with
+                Omarchy 4.0.1, after these critical security bugs were found. As a
+                matter of fact, it hasn&#39;t appeared that Omarchy actually disclosed their
+                own vulnerablilites on a dedicated page, which is really bad for a
+                project that&#39;s meant to become the &quot;face of the Linux Desktop&quot;.
+            </p>
+            <p>I haven&#39;t even got to the funniest part here. That notification
+                exploit? That was figured out by someone who is now <strong>in Omarchy&#39;s
+                    brand-new security team</strong>, and instead of doing the responsible
+                thing here and telling the Omarchy team privately, he disclosed it on
+                Twitter, which manages to get him onto the Omarchy Security team because
+                yes, disclosing vulnerabilities on Twitter is the sign of a good
+                security specialist, uh-huh.</p>
+            <img src="/blog/assets/omarchy/mdi-tweet.png">
+            <img src="/blog/assets/omarchy/oma-security-pg.png">
+            <p><em>As a sidenote, yes, I do know Mehmet Ince is a real security
+                    resarcher <a href="https://mehmetince.net/cve/">with real CVEs</a>, but
+                    revealing a giant secuity flaw on Twitter instead of proper disclosure
+                    in my opinion shows that Mehmet didn&#39;t take Omarchy seriously, which
+                    makes me question why DHH picked him.</em></p>
+            <p>For anywhere that security is involved, for Omarchy to become a
+                serious contender, they should preferrably</p>
+            <ol type="1">
+                <li>Disclose their security vulnerablities only after shipping them</li>
+                <li>Preferrably notify all users about said vulnerability and ask them
+                    to update their packages. I really can&#39;t reccomend Omarchy for anything
+                    security-involved otherwise.</li>
+            </ol>
+            <p>However, to be fair to DHH, he managed to get an entire security
+                team, contact page, credits page and get the bugs fixed in less than a
+                week, which I have to commend him for.</p>
+            <h1 id="2-feet-on-the-ground">2. Feet On the Ground</h1>
+            <h2 id="21-installing-omarchy">2.1. Installing Omarchy</h2>
+            <p>Whilst I was writing this, I thought it be best to actually try out
+                Omarchy instead of just talking without looking. The install ISO is
+                6.8GB, which seems a bit excessive, I would enjoy an actual installer
+                where you can select the components you want, and also extra components
+                (e.g install spotify as a postinstall job, etc), and it might even cut
+                down a little bit on install times! On entering the system, it asked me
+                to choose an AI model and if i wish to install speech dictation, but
+                other than that, setup was done, and I do have to say, this is quite
+                well-made.</p>
+            <h2 id="22-using-omarchy">2.2. Using Omarchy</h2>
+            <img src="/blog/assets/omarchy/desktop.png">
+            <p>The shell is quite well put-together, and nothing feels
+                <em>truly</em> out of place. I have a few minor gripes with the
+                launcher, but that&#39;s just mostly personal taste (I like wider
+                searchbars.)
+            </p>
+            <p>A lot of menus go directly to some bash script, which while bash is
+                great, I adore native UI, so having a dialog box for &quot;Do you want to
+                uninstall all pre-installed software&quot; (Another good feature to have,
+                btw!) feels better to me than a terminal prompt for it. Still, that&#39;s
+                just personal preference.</p>
+            <p>A thing I do commend though is the &quot;learn&quot; section. Having quick
+                shortcuts to essential guides is really damn nice to have, and is great
+                for beginners.</p>
+            <img src="/blog/assets/omarchy/learn.png">
+            <p>I would really love to customize the Omarchy menu more, pin stuff and
+                make custom sub-menus, even.</p>
+            <p>Other than that, Omarchy is a great pre-setup experience on the
+                outside. I haven&#39;t done a deep dive into it, I don&#39;t have time to,
+                sadly. But if someone threw me in front of an Omarchy machine, I
+                wouldn&#39;t be frustrated.</p>
+            <h1 id="3-the-gates-to-heavenhell">3. The gates to {heaven|hell}</h1>
+            <h2 id="31-dhh">3.1. DHH</h2>
+            <p>Welcome to section 3, the &quot;Politics&quot; bit. I have tried, I have really
+                tried to make this as apolitical as possible, but I can&#39;t get
+                everything. Rules, law and order are inheritly political, and when
+                you&#39;re managing a project like Omarchy, you have to have some amount of
+                law and order, and there will be some dispute on said law on order based
+                on one&#39;s beliefs. This is called &quot;politics&quot;, and its really fucking
+                un-escapable.</p>
+            <p>What was I on about? Oh, right, DHH. David Heinemeier Hansson is the
+                creator of Ruby on Rails (2003), co-owner/CTO of 37signals (Makers of
+                Basecamp and HEY), a Shopify board member since Nov 2024, and most
+                importantly for this writeup, creator of Omarchy. Since Omarchy is FOSS
+                and licensed under MIT, let&#39;s have a look at his personal stance on
+                FOSS, which... changes frequently.</p>
+            <ol type="1">
+                <li><strong>2013</strong> (<em>The Perils of Mixing Open Source and
+                        Money</em>): DHH declares that money corrupts OSS. He states Rails was
+                    built on man-centuries of unpaid gift labor and to in summary, not
+                    monetize FOSS software.</li>
+                <li><strong>Dec 2021</strong>: He declared that Open source is outside
+                    things like economics: &quot;the freeloaders are free.&quot; He
+                    attacked <strong>both</strong> Gates&#39; proprietary
+                    fear <strong>and</strong> Stallman&#39;s GPL reciprocity as scarcity-brain;
+                    championed MIT as pure altruism and declared a &quot;jubilee.&quot;</li>
+                <li><strong>Oct 2024</strong>: DHH blasted Matt Mullenweg as a &quot;mad
+                    king&quot; for weaponizing WordPress trademarks against WP Engine, arguing
+                    registries must be neutral infrastructure and BDFL power has
+                    limits.</li>
+                <li><strong>Dec 2025</strong>: DHH released Fizzy under his
+                    new <strong>O&#39;Saasy license</strong> (MIT minus SaaS rights), called it
+                    &quot;open source,&quot; then dismissed the OSI definition when challenged (&quot;You
+                    know this is just some shit people made up, right?&quot;). Sparked a public
+                    fight with Mullenweg; Dries Buytaert&#39;s measured verdict was that
+                    it&#39;s <em>source-available</em>, not open source.</li>
+                <li><strong>Early 2026</strong>: DHH admitted 37signals&#39; paid
+                    self-hosting model failed; going fully free/open worked better, so they
+                    pivoted to giving it away.</li>
+                <li><strong>Aug 2026</strong>: DHH now runs a foundation whose stated
+                    pillars include... holding trademarks (the exact behavior he condemned
+                    in Mullenweg) and being funded by tech billionaires, after years of
+                    arguing patronage-by-corporations wasn&#39;t necessary or healthy. Wait,
+                    what?</li>
+            </ol>
+            <h2 id="32-omacom">3.2. Omacom</h2>
+            <p><em>(I do apologise if I misinterpreted anything DHH said or claimed
+                    in that last section, langauge and research is hard and annoying, please
+                    feel free to correct me)</em></p>
+            <p>Omacom was a foundation created in August of 2026 to &quot;hold the
+                trademarks, fund the infrastructure, promote the work, and support the
+                open-source projects and developers Omarchy depends on.&quot; Sounds like a
+                good idea, but also fairly ambitious for a project that we&#39;ve observed
+                to just be fancy well-made dotfiles and a package repo with some
+                programs from the AUR and around 3 of Omarchy&#39;s own. How does DHH plan
+                to achieve this? Why, with an irresponsible amount of money of course!
+                Omacom is funded by</p>
+            <ul>
+                <li><a href="https://x.com/tobi">Tobi Lütke</a>, CEO of <a href="https://www.shopify.com/">Shopify</a>
+                </li>
+                <li><a href="https://x.com/patrickc">Patrick Collison</a>, CEO of <a
+                        href="https://stripe.com/">Stripe</a></li>
+                <li><a href="https://x.com/MichaelDell">Michael Dell</a>, Chairman and
+                    CEO of <a href="https://www.dell.com/">Dell Technologies</a></li>
+                <li><a href="https://x.com/jack">Jack Dorsey</a>, Block Head and
+                    Chairman of <a href="https://block.xyz/">Block</a></li>
+                <li><a href="https://x.com/eastdakota">Matthew Prince</a>, CEO of <a
+                        href="https://www.cloudflare.com/">Cloudflare</a></li>
+                <li><a href="https://x.com/brendaniribe">Brendan Iribe</a>, Cofounder
+                    of <a href="https://www.sesame.com/">Sesame</a> and Oculus</li>
+                <li><a href="https://x.com/jasonfried">Jason Fried</a>, CEO of <a
+                        href="https://37signals.com/">37signals</a></li>
+                <li><a href="https://x.com/drewhouston">Drew Houston</a>, cofounder and
+                    co-CEO of <a href="https://www.dropbox.com/">Dropbox</a></li>
+                <li><a href="https://x.com/steipete">Peter Steinberger</a>, creator
+                    of <a href="https://openclaw.ai/">OpenClaw</a></li>
+                <li>and of course, DHH</li>
+            </ul>
+            <p>These are very big names in Tech and AI, all of whom are chipping in
+                <em>One million dollars</em> for a grand total of <em>TEN MILLION</em>
+                dollars. For Omarchy. For some dotfiles and a package repo in distro
+                form. Either DHH has recieved some giant IOUs, these people are doing
+                this out of the goodness of their heart or something else is happening
+                here.
+            </p>
+            <p>As we pointed out earlier, DHH believed that FOSS software shouldn&#39;t
+                involve themselves with money and that registries must be neutral
+                infrastructure. Point one is already out the window, what about point
+                two? Well, I want you to listen very closely to how DHH describes
+                Dropbox when they joined funding.</p>
+            <blockquote>
+                <p>It’s extra sweet to have Drew and Peter on board because I’ve
+                    personally been such a big fan of both of them and their
+                    accomplishments. I’ve been an enthusiastic customer of Dropbox for
+                    nearly two decades, and it’s central to how I’m able to live with <em><a
+                            href="https://world.hey.com/dhh/no-backup-no-cry-274e0c31">no backup, no
+                            cry</a></em> yet constantly switch computers.</p>
+                <p>That’s why Omarchy ships with great Dropbox integration out of the
+                    box. Just go to <em>Install &gt; Service &gt; Dropbox</em>, and you’ll
+                    have file manager integration and a bespoke menu panel for controls.</p>
+            </blockquote>
+            <p>This sounds more like an advertisement for Dropbox than anything. But
+                Devil&#39;s Advocate will declare &quot;Maybe DHH just really really likes
+                Dropbox, and his language just sounded advertisey!&quot; But almost all of
+                these founders are getting something out of Omarchy in the end.</p>
+            <p>Dropbox - Bundled integration + announcement ad Dell - co-marketing +
+                hardware partnership (DHH&#39;s Omarchy XPS), pre-install path built
+                Cloudflare - Sponsored hosting credit on omarchy.org OpenClaw - A distro
+                whose desktop wires in 9 agent CLIs 37signals - It&#39;s basically dhh&#39;s
+                company and what probably runs Omarchy&#39;s infra Sesame - voice-based AI
+                company - currently getting nothing out of Omarchy other than &quot;its AI&quot;
+                Block - makes payment systems, Cash App, what appears to be more AI
+                services and Tidal - which Omarchy also has integrated Stripe - THE
+                payment processor, paired with Shopify, no other integration Shopify -
+                DHH is literally a board member</p>
+            <p>Omacom appears to be for these investors a financial partnership for
+                publicity and integration. This could get worse and we could see these
+                companies or more playing a greater role in Omarchy itself, or Nothing
+                could Happen. I am by no means going to instantly assume foul play here
+                or ulterior motives, that&#39;s not a good way to think. But millionaires
+                and billionaires are greedy, and want to keep their money. It&#39;s,
+                statistics-wise, incredibly unlikely for them to do it for no reason
+                that doesnt benefit them, but I can&#39;t read minds, so if I get proven
+                wrong, I won&#39;t really care, nor will anyone else.</p>
+            <p>What worries me more is what&#39;s happening with this money.</p>
+            <h2 id="33-an-irrefusable-offer">3.3. An irrefusable offer</h2>
+            <p>Omacom&#39;s first order of business was to <strong>exclusively</strong>
+                and premierely sponsor Vaxryy and Outfoxxed respectively, creators of
+                Hyprland and Quickshell respectively, and also terminating Hyprperks,
+                Hyprland&#39;s paid official dots, forum access and Q&amp;A. That word is
+                important there, <strong>exclusively</strong>. As quoted in the Omarchy
+                news post about hyprland:</p>
+            <blockquote>
+                <p>Many thanks to <a href="https://37signals.com/">37signals</a> (hello
+                    self! 😂), <a href="https://www.butterfly.so/">Butterfly</a>, and <a
+                        href="https://frame.work/">Framework</a> for helping Hyprland get to
+                    this point. Thrilled that the Omacom Foundation can take over from
+                    October 10, and give one of the best developers in this new Linux moment
+                    the chance to go all-in.</p>
+            </blockquote>
+            <p>This confuses me. Why is this exclusive? Well, you could either take
+                this from a cynical, malicious point of view or an innocent point of
+                view. On the innoncent side:</p>
+            <ul>
+                <li><strong>Full funding implies exclusivity anyway</strong> - If you&#39;re
+                    paying a maintainer enough to &quot;never think about fundraising or
+                    commercial development again&quot; (DHH&#39;s words), letting him simultaneously
+                    take a second corporate sponsor creates unresolvable conflicts of
+                    interest. Formalizing it as exclusivity is just honest bookkeeping.</li>
+                <li><strong>Buyout logic.</strong> You can&#39;t terminate someone&#39;s paid
+                    perks program while permitting them to sell equivalents elsewhere.
+                    Exclusivity is the contractual consideration for ending Hyprperks - it
+                    protects <em>Omacom</em> from paying for a maintainer who&#39;s still
+                    monetizing independently.</li>
+                <li><strong>Clean governance</strong> - One patron = one accountable
+                    party, no divided loyalty when priorities collide. Multi-sponsor
+                    maintainers genuinely do get squeezed.</li>
+                <li><strong>Multi-year predictability</strong> - 3-year terms let both
+                    sides commit to roadmaps without re-negotiaotiaion or pulling out
+                    mid-way through.</li>
+            </ul>
+            <p>But these points apart from the last, perhaps, don&#39;t make sense for a
+                sponsor of a FOSS project as being a sponsor doesnt mean you get any
+                kind of decision power in most cases, and it appears to be the same for
+                Hyprland, too. Which brings us to the possibly more malicious
+                reasons.</p>
+            <ul>
+                <li><strong>Aquisition-less Aquisition</strong> - Hyprland and
+                    Quickshell <em>are</em> Omarchy&#39;s desktop identity. Total financial
+                    dependence converts two community projects into something functionally
+                    close to contracted suppliers but with no equity, no IP assignment, no
+                    employment law, but Omacom is the only entity that can turn the money
+                    tap on or off. Cheaper than hiring, stickier than a grant.</li>
+                <li><strong>Rival influence lockout</strong> - Non-exclusive deals would
+                    let any other company or foundation &quot;buy&quot; the compositor and shell
+                    toolkit at the heart of Omarchy. Exclusivity locks the door behind
+                    them.</li>
+                <li><strong>Ideological lock-in</strong> - Both recipients were picked
+                    partly because they&#39;re outside the Code-of-Conduct-governance
+                    establishment (We will discuss that). After three years of sole-source
+                    income, neither can credibly criticize their patron without torching
+                    their own livelihood. That&#39;s soft power no contract clause needs to
+                    state.</li>
+                <li><strong>The roadmap dependency</strong> - The Quickshell
+                    announcement explicitly ties the money to <em>&quot;cement the connection to
+                        our long-term plans for The Age of Agents.&quot;</em> Quattro&#39;s whole design
+                    needs tight compositor-to-shell coupling; guaranteed developer attention
+                    on Omarchy-relevant work is precisely what&#39;s being purchased. Diffused
+                    priorities across multiple patrons would dilute that.</li>
+            </ul>
+            <p>Exclusivity is essentially unheard of in mainstream OSS funding norms
+                like Sovereign Tech Fund, NLnet, GitHub Sponsors and corporate
+                foundations, all of which ate non-exclusive by default. Exclusive
+                multi-year personal sponsorship <em>is</em> standard practice in exactly
+                two domains, being sports and the creator economy via athlete
+                endorsement deals and streamer contracts. DHH is a Le Mans racing driver
+                who runs a media operation, as far as I can see he imported the
+                motorsport/creator deal structure into FOSS and used it as-is. DHH even
+                jokingly called it the &quot;Oligarchy&quot; distro and bought a domain for it,
+                oligarchy.fyi.</p>
+            <p>In <em>my</em> opinion, nothing good can come from this exclusivity.
+                Note what innocence can&#39;t explain away: why pick the two co-working
+                projects Omarchy depends on, make them financially monogamous with
+                oneself specifically, and pair it with trademark-holding, unless control
+                of those dependencies is the point.</p>
+            <p>Vaxryy says his authority over Hyprland&#39;s direction is preserved, and
+                there&#39;s no public evidence of feature strings today. The risk isn&#39;t
+                what&#39;s in the contract; it&#39;s that in year four, &quot;renewal&quot; and
+                &quot;independence&quot; become mutually exclusive
+                concepts for a man who gave up every other income stream. I&#39;m
+                <strong>not</strong> saying that&#39;s what&#39;s going to happen, I&#39;m saying
+                that it could. I&#39;m not saying this is DHH&#39;s plan or &quot;agenda&quot;, im saying
+                that this is a possibility that can only come from exclusivity.
+            </p>
+            <p>Let&#39;s go to something not as heavy and forboding with the possibility
+                to ruin people&#39;s lives, jobs and welfare. Let&#39;s talk about AI.</p>
+            <h2 id="34-dhh-probably-doesnt-know-his-own-codebase">3.4. DHH
+                (probably) doesn&#39;t know his own codebase</h2>
+            <p>It&#39;s no secret that DHH vibecodes Omarchy, and he presents it
+                proudly, claiming Omarchy is more malleable because you can ask an agent
+                to change anything on your system. This is actually a really cool
+                concept, where all of your system is configurable from one &quot;prompt&quot;.
+                However, DHH uses a bit more than one prompt, or even just one
+                agent.</p>
+            <img src="/blog/assets/omarchy/ai-commit.png">
+            <p>That there is DHH, Omarchybot, Claude and Codex (xhigh) in
+                <em>one</em> commit. From the description of this commit, its clear that
+                this was done over <em>at least</em> multiple claude sessions, but
+                probably multiple of all of the AI agents here. The manual for Omarchy
+                and its code is clearly vibe-coded, so that raises the question - is
+                this DHH&#39;s own codebase? Does he know what&#39;s in his distro, or is it so
+                abstracted away with AI agents that he has no clue what&#39;s making his
+                system tick? It&#39;s probably a mix of yes and no. The problem with an
+                abstracted codebase like this is that if you encounter an issue, you
+                never coded the bug, wouldnt know where it is, and wouldn&#39;t know how to
+                fix it, because you delegated it to your agents. Additionally, by
+                working in this way, your ability to program is only whenever your
+                agent&#39;s providers are not under maintenance and if you have enough usage
+                left. If they don&#39;t, they&#39;re clocked out for the day, and you&#39;re left as
+                a boss with no employees.
+            </p>
+            <p>Another problem with dotfiles is that they&#39;re spread so thinly
+                throughout your system, so either you modify files on the fly, or you
+                put them into one centralised codebase which then &quot;re-builds&quot; itself and
+                puts all the changed files where they need to go. It turns out this
+                already exists, and its called Ni- oh, DHH already knows about this?
+                Let&#39;s hear his thoughts on it! I&#39;m sure it&#39;ll only be a matter of time
+                before he starts using it!</p>
+            <blockquote>
+                <p>&quot;Nix is actually part of the reason why we&#39;re doing an institution...
+                    Linux is [bleep] infiltrated with goddamn maniacs and just clowns who
+                    want to control what you think and who you can associate with and whose
+                    opinions are allowed to use what software.&quot;</p>
+            </blockquote>
+            <blockquote>
+                <p>&quot;...the goddamn CANCER that is around both Nix and so many of the
+                    other institutions in the Linux world is one of the reasons we&#39;re like,
+                    we need a counterweight. We need a place over here that&#39;s not just full
+                    of [bleep] <strong>GOBLINS</strong> who are crazy.&quot;</p>
+            </blockquote>
+            <blockquote>
+                <p>&quot;We need just some people who are like: you know what, we make FUN
+                    COMPUTERS. Do you like computers? Then come have fun with us. I don&#39;t
+                    give a flying [bleep] what you think about other topics or what your
+                    politics are.&quot;</p>
+            </blockquote>
+            <p>oh.</p>
+            <h2 id="35-its-goblin-time">3.5. It&#39;s goblin time</h2>
+            <p>So, Omarchy, a distro and project designed to be &quot;apolitical&quot; won&#39;t
+                involve itself with or use Nix tooling, a technology he said is
+                genuinely good, for political reasons.</p>
+            <p>I do partially agree with some of his statements and takes. The Nix
+                community and board isn&#39;t <em>great</em>, but you don&#39;t have to stop
+                using software becuase the leadership doesn&#39;t align with your thoughts
+                and feelings. I have <strong>never</strong> interacted with the nix
+                community or board, yet I still use NixOS becuase it&#39;s an amazing
+                concept and system. Your politics doesnt have to declare what software
+                you use and don&#39;t use, that&#39;s called being apolitical. DHH, it&#39;s clear
+                your definitons are a bit muddled up in your brain, let&#39;s make it
+                simple:</p>
+            <p><strong>apolitical</strong> (<em><a href="https://en.wiktionary.org/wiki/Appendix:Glossary#comparative"
+                        title="Appendix:Glossary">comparative</a></em> <strong>more
+                    <strong>apolitical</strong></strong>, <em><a
+                        href="https://en.wiktionary.org/wiki/Appendix:Glossary#superlative"
+                        title="Appendix:Glossary">superlative</a></em> <strong>most
+                    <strong>apolitical</strong></strong>)
+            </p>
+            <ol type="1">
+                <li>
+                    <p>Having no <a href="https://en.wiktionary.org/wiki/interest#English" title="interest">interest</a>
+                        or involvement in <a href="https://en.wiktionary.org/wiki/politics#English"
+                            title="politics">politics</a>.</p>
+                    <p><em>The Queen is an <strong>apolitical</strong> figure.</em></p>
+                </li>
+                <li>
+                    <p>Having no political <a href="https://en.wiktionary.org/wiki/relevance#English"
+                            title="relevance">relevance</a> or <a href="https://en.wiktionary.org/wiki/function#English"
+                            title="function">function</a>.</p>
+                    <p><em>The PM&#39;s visit to the school was
+                            entirely <strong>apolitical</strong>.</em></p>
+                </li>
+                <li>
+                    <p>Politically <a href="https://en.wiktionary.org/wiki/neutral#English" title="neutral">neutral</a>,
+                        <a href="https://en.wiktionary.org/wiki/unbiased#English" title="unbiased">unbiased</a>, <a
+                            href="https://en.wiktionary.org/wiki/nonaligned#English" title="nonaligned">nonaligned</a>
+                        and free from <a href="https://en.wiktionary.org/wiki/party_politics#English"
+                            title="party politics">party
+                            politics</a>.
+                    </p>
+                    <p><em>My colleagues and I come to this task with open minds, we
+                            are <strong>apolitical</strong> and <a
+                                href="https://en.wiktionary.org/wiki/independent#English"
+                                title="independent">independent</a> of any political
+                            party</em>.__</p>
+                </li>
+            </ol>
+            <p>I am <em>really</em> not super interested or involved in politics; I
+                have no reason to be. I don&#39;t let one guy dictate what I can and can&#39;t
+                use, and you shouldn&#39;t either. That&#39;s being truly apolitical, which by
+                not using software because of your politics, you are not being. If you
+                have other issues with Nix, then by all means, don&#39;t use it. But if it&#39;s
+                just because they don&#39;t sing your tune, does that <em>really</em> make
+                Omarchy apolitical?</p>
+            <p>Let&#39;s look at Nix&#39;s Code of Conduct actually, since you think that&#39;s
+                tangentially related.</p>
+            <blockquote>
+                <p>In the interest of fostering an open and welcoming environment, we as
+                    contributors and maintainers pledge to make participation in our project
+                    and our community a harassment-free experience for everyone, regardless
+                    of age, body size, disability, ethnicity, sex characteristics, gender
+                    identity and expression, level of experience, education, socio-economic
+                    status, nationality, personal appearance, race, religion, or sexual
+                    identity and orientation.</p>
+                <h2 id="our-standards">Our Standards</h2>
+                <p>Examples of behavior that contributes to creating a positive
+                    environment include:</p>
+                <ul>
+                    <li>Using welcoming and inclusive language</li>
+                    <li>Being respectful of differing viewpoints and experiences</li>
+                    <li>Gracefully accepting constructive criticism</li>
+                    <li>Focusing on what is best for the community</li>
+                    <li>Showing empathy towards other community members</li>
+                    <li>Being considerate of other people&#39;s time and energy, and leaving
+                        space for others to be heard</li>
+                    <li>Respecting personal boundaries of other people (e.g. when being
+                        blocked)</li>
+                </ul>
+                <p>Examples of unacceptable behavior by participants include:</p>
+                <ul>
+                    <li>The use of sexualized language or imagery and unwelcome sexual
+                        attention or advances</li>
+                    <li>Trolling, insulting/derogatory comments, and personal or political
+                        attacks</li>
+                    <li>Disrupting discussions and disingenuous discussion practices,
+                        including derailing, concern trolling, sea lioning and other bad faith
+                        arguments</li>
+                    <li>Public or private harassment</li>
+                    <li>Publishing others’ private information, such as a physical or
+                        electronic address, without explicit permission</li>
+                    <li>Wasting other people’s time with low quality contributions,
+                        including but not limited to LLM and bot spam</li>
+                    <li>Other conduct which could reasonably be considered inappropriate in
+                        a professional setting</li>
+                </ul>
+            </blockquote>
+            <p>I don&#39;t believe this to be an unreasonable ask. If there&#39;s something
+                i&#39;m missing here, please, feel free to correct me. This, in my opinion,
+                is just a long way of saying <em>&quot;Do you like computers? Then come have
+                    fun with us. I don&#39;t give a flying [bleep] what you think about other
+                    topics or what your politics are.&quot;</em> Sure, the Board might not follow
+                this standard, but that is a separate issue I just discussed - fuck the
+                board, use the software you want to use, build the software you want to
+                build, and don&#39;t let politics declare the rules of an &quot;apolitical&quot;
+                project.</p>
+            <p>Oh yeah, that warning at the start - you shouldn&#39;t harrass DHH
+                becuase you&#39;re proving him right. You become the goblins that DHH sees,
+                declares you a &quot;bad one&quot;, and you&#39;re out of the running before you could
+                get an edge in. Be respectful guys, no matter how much you hate a man,
+                project, company or foundation, don&#39;t snark without justifiable reason
+                and explanation, and let them offer a response back. Have discussion,
+                this is how we get things done.</p>
+            <h1 id="4-an-inconclusive-conclusion">4. An inconclusive conclusion</h1>
+            <p>I really couldn&#39;t come up with a good conclusion to this. Is Omarchy
+                the future of the Linux Desktop? Possibly. Is Omarchy &quot;evil&quot;? Possibly.
+                Is Omarchy actually meant to be political? Possibly. Is Omarchy good?
+                Possibly. At the very least I can say this: At best, Omarchy is a set of
+                vibe-coded dotfiles opinonated and aligned to what DHH wants. At worst,
+                Omarchy is an attempt to control and strangle the Linux Desktop
+                ecosystem. I can&#39;t give a conclusion on whether the worst is true or
+                false. This could age like milk, this could age like wine.</p>
+            <p>As a conclusion, i say that you should make up your own mind. Do what
+                you want. I&#39;m tired, boss.</p>
+            <p>If you want to comment on this or correct me about anything i said
+                that could be incorrect, please feel free to <a href="https://blade0.net/contact">CONTACT</a> me.</p>
+            <p>--BLADE0<br> Disable Your Rabbits<br> <code>*C\B</code></p>
+
+        </div>
+        <footer>
+            <p>&copy; Blade0 2026</p>
+            <p>All rabbits disabled.</p>
+        </footer>
+    </div>
+    <input type="checkbox" id="fullscreen"><label for="fullscreen">Fullscreen</label>
+</body>
+
+</html>
