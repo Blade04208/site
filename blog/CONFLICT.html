@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html style="--c:black;--t:red">
+
+<head>
+    <title>blade0.net</title>
+    <link rel="stylesheet" href="/src/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+<!-- No Rabbits Here. -->
+<style>
+    :root {
+        --dh: 10px;
+    }
+
+    span[style] {
+        position: relative;
+    }
+
+    span[YOU] {
+        background: #f327ad;
+        color: black;
+        transition: all 0.3s ease;
+        padding: 2px 4px;
+        border-radius: 2px;
+        animation: 6s linear infinite running you;
+        border: 1px solid transparent;
+
+        &::before {
+            display: inline-block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            animation: 6s linear infinite running you-icon;
+            background: url("https://cdn.discordapp.com/emojis/1546571536687702097.webp");
+            background-size: contain !important;
+            margin-right: 2px;
+            margin-bottom: -4px;
+        }
+    }
+
+    @keyframes you {
+        0% {
+            background: #f327ad;
+            color: black;
+        }
+
+        12.5% {
+            background: #f327ad;
+            color: black;
+        }
+
+        25% {
+            background: #53412e;
+            color: white;
+        }
+
+        37.5% {
+            background: #53412e;
+            color: white;
+            border-color: transparent;
+        }
+
+        50% {
+            background: green;
+            color: white;
+            border-color: white;
+        }
+
+        62.5% {
+            background: green;
+            color: white;
+            border-color: white;
+        }
+
+        75% {
+            background: white;
+            color: black;
+            border-color: transparent;
+        }
+
+        87.5% {
+            background: white;
+            color: black;
+        }
+
+        100% {
+            background: #f327ad;
+            color: black;
+        }
+    }
+
+    @keyframes you-icon {
+        0% {
+            background: url("https://cdn.discordapp.com/emojis/1546571536687702097.webp");
+        }
+
+        12.5% {
+            background: url("https://cdn.discordapp.com/emojis/1546571536687702097.webp");
+        }
+
+        25% {
+            background: url("https://cdn.discordapp.com/emojis/1482012272628076676.webp");
+        }
+
+        37.5% {
+            background: url("https://cdn.discordapp.com/emojis/1482012272628076676.webp");
+            width: 20px;
+        }
+
+        50% {
+            background: transparent;
+            width: 0px;
+        }
+
+        62.5% {
+            background: transparent;
+            width: 0px;
+        }
+
+        75% {
+            background: url(data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%14%00%00%00%15%08%06%00%00%00F%D5%CE%A8%00%00%00%09pHYs%00%00%0B%13%00%00%0B%13%01%00%9A%9C%18%00%00%00%01sRGB%00%AE%CE%1C%E9%00%00%00%04gAMA%00%00%B1%8F%0B%FCa%05%00%00%00%0EtEXtSoftware%00Figma%9E%B1%96c%00%00%01%3BIDATx%01%ADT%0Bq%C30%0C%7D%DD%0D%80%21x%0C%CA%60f%D2%40%08%83z%08V%06%85%B01H%18dC%D0%14AR%04%AD%7D%91%1BE%B6%EB%F4%AE%EFN%97%8F%E4%A7%A7g%27%40%19%8D%8B%93%8B-%5E%00%E3%E2J%F1%BBf%C1%5B%21%DF%B3%7B%25r%DA%85uQ%21%03%9F8P%21%C7%80Ia%2B%C8N%98%D5Gv%18%96%94~5%09%C2%86%D5_%B9%880%B2%12%DD%3B%17%3Bz%FE%C7%12%7B%12%10%F0%85%A55wX%D1%D5G%8D%C9%8A%A0%B0%16y%8B%024%96%DE%F88b%B6%22%F89%E0%C1f%ACU%2B%3D%DE%92%E2%1F%D6%E8%B8%A1N%9F%8C%ECLW%EF%EB%0E%F1q%E9%E9%9DJ%29%D9PG%8D%E7p%CE%BC%F7%C7.%F2%AC%C7%F4U%F8q%3A%A4%C7%FE%C6%03hLcW%98%95%FAq%F8Y%0B%1E%F1%E6%AB%27%D3ba%CB%C8MB%F5%1E%19%3FSdAE%20%AC%A8%CE%22%DEyU%22%1B0%8F%14%08%0F%AC%5E%92%1AIh%10%7F%25%10%84%9DXS%93%88%16%09%28%A6%D0%8A%1C%DF%A0%AC_%1E%EF%EC~t%F1%91%A9%BB%88%C6c%A6%AE%F8%83%0D%F8cMG%BC%08%06%2B%CE%DD%0D%B3%95%891.%E6%C7%C5%00%00%00%00IEND%AEB%60%82);
+            width: 20px;
+        }
+
+        87.5% {
+            background: url(data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%14%00%00%00%15%08%06%00%00%00F%D5%CE%A8%00%00%00%09pHYs%00%00%0B%13%00%00%0B%13%01%00%9A%9C%18%00%00%00%01sRGB%00%AE%CE%1C%E9%00%00%00%04gAMA%00%00%B1%8F%0B%FCa%05%00%00%00%0EtEXtSoftware%00Figma%9E%B1%96c%00%00%01%3BIDATx%01%ADT%0Bq%C30%0C%7D%DD%0D%80%21x%0C%CA%60f%D2%40%08%83z%08V%06%85%B01H%18dC%D0%14AR%04%AD%7D%91%1BE%B6%EB%F4%AE%EFN%97%8F%E4%A7%A7g%27%40%19%8D%8B%93%8B-%5E%00%E3%E2J%F1%BBf%C1%5B%21%DF%B3%7B%25r%DA%85uQ%21%03%9F8P%21%C7%80Ia%2B%C8N%98%D5Gv%18%96%94~5%09%C2%86%D5_%B9%880%B2%12%DD%3B%17%3Bz%FE%C7%12%7B%12%10%F0%85%A55wX%D1%D5G%8D%C9%8A%A0%B0%16y%8B%024%96%DE%F88b%B6%22%F89%E0%C1f%ACU%2B%3D%DE%92%E2%1F%D6%E8%B8%A1N%9F%8C%ECLW%EF%EB%0E%F1q%E9%E9%9DJ%29%D9PG%8D%E7p%CE%BC%F7%C7.%F2%AC%C7%F4U%F8q%3A%A4%C7%FE%C6%03hLcW%98%95%FAq%F8Y%0B%1E%F1%E6%AB%27%D3ba%CB%C8MB%F5%1E%19%3FSdAE%20%AC%A8%CE%22%DEyU%22%1B0%8F%14%08%0F%AC%5E%92%1AIh%10%7F%25%10%84%9DXS%93%88%16%09%28%A6%D0%8A%1C%DF%A0%AC_%1E%EF%EC~t%F1%91%A9%BB%88%C6c%A6%AE%F8%83%0D%F8cMG%BC%08%06%2B%CE%DD%0D%B3%95%891.%E6%C7%C5%00%00%00%00IEND%AEB%60%82);
+        }
+
+        100% {
+            background: url("https://cdn.discordapp.com/emojis/1546571536687702097.webp")
+        }
+    }
+</style>
+
+<body>
+    <nav> <a href="/index.html" class="nv-i">home</a>
+        <a href="/about.html" class="nv-i">about</a>
+        <a href="/projects.html" class="nv-i">projects</a>
+        <a href="/designs.html" class="nv-i sel">designs</a>
+        <a href="/contact.html" class="nv-i">contact</a>
+    </nav>
+    <div id="content">
+        <div class="scroll">
+            <h1> <a href="/designs.html" class="nv-b">Back</a><span>CONFLICT</span></h1>
+            <p>
+                THE FOLLOWING IS A SERIES OF MESSAGES THAT MAY BE OF INTEREST TO <span YOU>YOU</span>. IF THE PRIOR IS A
+                STATEMENT OF TRUTH, PAY ATTENTION.
+                <br>
+                <br>
+                AS A PART OF SOCIETY, DISCUSSION IS A NORMAL THING WITHIN COMMUNITY, WITHIN FRIENDS, WITHIN FAMILY.
+                DISCUSSION MAY INVOLVE BUT IS NOT LIMITED TO ELEMENTS OF SURPRISE OR SECRECY. SUCH ELEMENTS IN THE WRONG
+                MINDS CAN LEAD TO DISCUSSION TRANSFORMING INTO CONFLICT.
+                <br>
+                <br>
+                CONFLICT IS UNFORTUNATE, BUT IT IS INEVITABLE. HOWEVER, AS A POPULATION, OR AS A COMMUNITY, ONE CAN TAKE
+                STEPS TO AVOID CONFLICT. HOWEVER, FOR CERTAIN COMMUNITIES, THE POPULATION FAILS TO DO SO.
+                <br>
+                <br>
+                OFTEN TIMES, SUCH FAILURE CAN BE PINNED DOWN TO ONE PERSON OR ONE SMALL GROUP. THE RESPONSE IS OFTEN
+                THOUGHT TO REMOVE SUCH PEOPLE, TO, AS AN EXAMPLE QUOTATION GOES, "RIP OUT THE CANCER." THE "CANCER".
+                WHILE IT MAY BE SEEN AS SUCH TO THE OPPOSING, RIPPING OUT THE "CANCER" LEAVES ONLY A HOLE WHERE IT ONCE
+                WAS. TO RIP OUT A PORTION OF A COMMUNITY IS TO RIP OUT A COMMUNITY.
+                <br>
+                <br>
+                A BETTER SOLUTION, OFTEN OVERLOOKED, IS TO TREAT SUCH "CANCER" INSTEAD OF RIPPING IT OUT AND LETTING IT
+                EVAPORATE BY ITSELF.
+                <br>
+                <br>
+                IN DESIGN, THERE IS OFTEN DISCUSSION BETWEEN WHICH TYPE OF DESIGN IS BETTER: "SKEUMORPHIC" DESIGN, BEING
+                DESIGN THAT IMITATES REAL OBJECTS AND ACTIONS ON EARTH, OR "FLAT" DESIGN, WHICH APPEARS MORE BASIC AND,
+                SOME COULD SAY, "BORING". AS QUOTED BY DECEASED INNOVATOR AND PRIOR CHIEF EXECUTIVE OFFICER OF APPLE
+                COMPUTERS INCORPORATED, STEVE JOBS, "DESIGN IS NOT JUST HOW IT LOOKS. DESIGN IS HOW SOMETHING FEELS."
+                ONE DOES NOT REQUIRE SKEUOMORPHISM FOR A DESIGN TO BE "GOOD". ONE DOES NOT REQUIRE FLAT DESIGN FOR A
+                DESIGN TO BE "GOOD". ONE IS VERSED IN WHAT ONE IS VERSED IN.
+                <br>
+                <br>
+                SKEUMOPHISM AND "FLATISM" IS AN EXAMPLE OF DISCUSSION TURNING TO CONFLICT, SOMETIMES IRONICALLY,
+                SOMETIMES SERIOUSLY. IN MY PERSONAL COMMUNITIES, MY OWN CIRCLES OF DESIGNERS, CIRCLES OF <span
+                    YOU>YOU</span>, I HAVE
+                SEEN CONFLICT AGAIN
+                <br>
+                AND AGAIN
+                <br>
+                <span style="top: -2px; font-size: 18px;line-height: 0">AND AGAIN</span>
+                <br> <span style="top: -4px; font-size: 20px;line-height: 0">AND AGAIN</span>
+                <br> <span style="top: -8px; font-size: 22px;line-height: 0">AND AGAIN</span>
+                <br> <span style="top: -16px; font-size: 24px;line-height: 0">AND AGAIN</span>
+                <br> <span style="top: -32px; font-size: 26px;line-height: 0">AND AGAIN</span>
+                <br> <span style="top: -64px; font-size: 28px; line-height: 0">AND AGAIN</span>
+            <div style="position: relative; top: -20px">
+                <div class="dithered c40" style="height: var(--dh)"></div>
+                <div class="dithered c30" style="height: var(--dh)"></div>
+                <div class="dithered c20" style="height: var(--dh)"></div>
+                <div class="dithered c10" style="height: var(--dh)"></div>
+                <div class="dithered c20" style="height: var(--dh)"></div>
+                <div class="dithered c30" style="height: var(--dh)"></div>
+                <div class="dithered c40" style="height: var(--dh)"></div>
+            </div>
+            <br>
+            <span style="font-size: 12px; font-weight: 300">Session corrupted. Resuming from last safe point.</span>
+
+            <br>
+            <br>
+            IN MY PERSONAL COMMUNITIES, MY OWN CIRCLES OF DESIGNERS, CIRCLES OF <span YOU>YOU</span>, I HAVE SEEN
+            CONFLICT OCCUR.
+            <br>
+            <br>
+            I HAVE SEEN PEOPLE CREATE COMMUNTIES AND THEM GAIN FOLLOWERS, FRIENDS, CONTACTS, DISCUSSION.
+            <br>
+            <br>
+            <div
+                style="height: 120px; display: flex; align-items: center; justify-content: center; color: black; background-color: white; font-family: Inter, sans-serif; font-size: 24px">
+                AND SO CONFLICT OCCURS.
+            </div>
+            <br>
+            THE CONFLICT IS DEALT WITH, AT THE COST OF THE COMMUNITY. SO THEY MOVE. THE SPACE IS NEW THIS TIME, IT'S
+            "DIFFERENT".
+            <br>
+            <br>
+            <div
+                style="height: 120px; display: flex; align-items: center; justify-content: center; color: rgb(255 255 255 / 0.5); text-shadow: 0px 0px 8px rgb(255 255 255 / 0.5); background: linear-gradient(to bottom, #2D2925, #0B0E16); font-family: serif; font-size: 24px">
+                AND YET CONFLICT OCCURS.
+            </div>
+            <br>
+            A SCHISM OCCURS. THE COMMUNITY SPLITS IN TWO, DUE TO DISCUSSION AND DISAGREEMENT.
+            <br>
+            <br>
+            <div
+                style="height: 120px; display: flex; align-items: center; justify-content: center; color: black; background-color: #f327ad; font-family: 'Host Grotesk', sans-serif; font-size: 24px">
+                AND THUS CONFLICT OCCURS.
+            </div>
+            <br>
+            ONE SIDE WHISPERS ABOUT THE OTHER, THE WHISPERS BECOME BIGGER, THEY BECOME LOUDER, THEY BECOME TALKS,
+            THEY BECOME SHOUTS, UNTIL ONE SIDE DETONATES, EXPLODES.
+            <br>
+            <br>
+            I HATE THIS. I DONT UNDERSTAND, I SIMPLY DO NOT UNDERSTAND, HOW ONE COMMUNITY CAN SHOW THIS MUCH HATE
+            TOWARDS ONE ANOTHER.
+            <br>
+            <br>
+            I TRY TO REMAIN A NEUTRAL PARTY HERE, TRY TO STAY ON THE CENTER LINE, LIKE THE VERY NATION I RESIDE IN.
+            SUCH A TASK IS NEAR IMPOSSIBLE, AND A TASK I KNOW I HAVE FAILED, MOST LIKELY. IT WAS A TASK THAT THIS
+            NATION DID NOT FOLLOW. YET I CONTINUE IN MY ENDEAVOUR.
+            <br>
+            <br>
+            WHY?
+            <br>
+            <br>
+            I HAVE YET TO CAUSE CONFLICT. THAT FACT, IN THIS COMMUNITY, I CONSIDER AN ACHIEVEMENT. TO MY KNOWLEDGE,
+            I HAVE YET TO ANGER ANY ONE PERSON OR ONE SIDE. I HOPE THAT THOSE WHO DO CAUSE CONFLICT, BY ACCIDENT OR
+            PURPOSE, CAN MAKE AMENDS AND FOLLOW LIKE ME.
+            <br>
+            <br>
+            BUT THAT WILL NEVER HAPPEN.
+            <br>
+            <br>
+            BECAUSE WE ARE HUMANS, HUMANS ARE COMMUNITIES, COMMUNITIES CREATE DISCUSSION, AND DISCUSSION CAUSES
+            CONFLICT.
+            <br>
+            <br>
+            I WILL MOST LIKELY NOT DISCUSS THIS TOPIC AGAIN. CARE FOR YOURSELF, CARE FOR OTHERS, AND MOST
+            IMPORTANTLY, DISABLE YOUR RABBITS.
+            <br>
+            <br>
+            -- BLADE0<br>
+            *(,\B
+            </p>
+        </div>
+        <footer>
+            <p>&copy; Blade0 2026</p>
+            <p>All rabbits disabled.</p>
+        </footer>
+    </div>
+    <input type="checkbox" id="fullscreen"><label for="fullscreen">Fullscreen</label>
+</body>
+
+</html>
